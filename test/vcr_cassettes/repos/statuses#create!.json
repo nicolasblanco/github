@@ -1,0 +1,46 @@
+[
+  {
+    "request": {
+      "body": "{\"target_url\":\"https://www.workflowci.com\",\"state\":\"success\",\"description\":\"It is green, yay!\",\"context\":\"WorkflowCI\"}",
+      "headers": {
+        "Authorization": "***",
+        "Accept": "application/vnd.github.howard-the-duck-preview+json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/WorkflowCI/github/statuses/28e85be9a17c94056fde437c11a60069dfc41924"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"url\":\"https://api.github.com/repos/WorkflowCI/github/statuses/28e85be9a17c94056fde437c11a60069dfc41924\",\"avatar_url\":\"https://avatars0.githubusercontent.com/u/41810520?v=4\",\"id\":5433692887,\"node_id\":\"MDEzOlN0YXR1c0NvbnRleHQ1NDMzNjkyODg3\",\"state\":\"success\",\"description\":\"It is green, yay!\",\"target_url\":\"https://www.workflowci.com\",\"context\":\"WorkflowCI\",\"created_at\":\"2018-08-31T01:32:37Z\",\"updated_at\":\"2018-08-31T01:32:37Z\",\"creator\":{\"login\":\"workflowci-dev[bot]\",\"id\":39907640,\"node_id\":\"MDM6Qm90Mzk5MDc2NDA=\",\"avatar_url\":\"https://avatars0.githubusercontent.com/u/41810520?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D\",\"html_url\":\"https://github.com/apps/workflowci-dev\",\"followers_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/workflowci-dev%5Bbot%5D/received_events\",\"type\":\"Bot\",\"site_admin\":false}}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Fri, 31 Aug 2018 01:32:37 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1516",
+        "Status": "201 Created",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4993",
+        "X-RateLimit-Reset": "1535680123",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"3415bdb1e2c033b240966ce87b5dbc27\"",
+        "Location": "https://api.github.com/repos/WorkflowCI/github/statuses/28e85be9a17c94056fde437c11a60069dfc41924",
+        "X-GitHub-Media-Type": "github.v3; param=howard-the-duck-preview; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-Runtime-rack": "0.136333",
+        "X-GitHub-Request-Id": "EDC3:35C0:10ED73:22DE2F:5B889AB5"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
