@@ -26,4 +26,12 @@ defmodule Github do
   def get!(url, headers) do
     HTTPoison.get!(url, headers)
   end
+
+  def to_github_response(response) do
+    %Github.Response{
+      body: from_json!(response.body),
+      headers: response.headers,
+      status: response.status_code
+    }
+  end
 end

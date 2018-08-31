@@ -17,11 +17,10 @@ defmodule Github.Repos.Statuses do
         description: "It is green, yay!",
         context: "WorkflowCI"
       )
-      %{
-        "avatar_url" => "https://avatars0.githubusercontent.com/u/41810520?v=4",
-        "context" => "WorkflowCI",
-        "created_at" => "2018-08-31T00:48:43Z",
-        ...
+      %Github.Response{
+        body: %{"context" => "WorkflowCI", ...},
+        status: 201,
+        headers: [...]
       }
   """
 
@@ -39,8 +38,6 @@ defmodule Github.Repos.Statuses do
       {"Accept", "application/vnd.github.howard-the-duck-preview+json"},
     ]
 
-    response = post!(url, body, headers)
-
-    from_json!(response.body)
+    post!(url, body, headers) |> to_github_response
   end
 end

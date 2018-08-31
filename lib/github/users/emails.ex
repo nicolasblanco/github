@@ -5,22 +5,17 @@ defmodule Github.Users.Emails do
   ## Example
 
       iex> Github.Users.Emails.list!("access_token")
-      [
-        %{
-          "email" => "email@example.com",
-          "primary" => true,
-          "verified" => true,
-          "visibility" => "private"
-        }
-      ]
+      %Github.Response{
+        body: [%{"email" => "email@example.com", "primary" => true, "verified" => true, "visibility" => "private"}],
+        status: 200,
+        headers: [...]
+      }
   """
 
   def list!(access_token) do
-    response = get!(
+    get!(
       "https://api.github.com/user/emails",
       [{"Authorization", "token #{access_token}"}]
-    )
-
-    from_json!(response.body)
+    ) |> to_github_response
   end
 end

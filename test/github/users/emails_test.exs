@@ -4,8 +4,10 @@ defmodule Github.Users.EmailsTest do
 
   test "returns a list" do
     use_cassette "users/emails.list!" do
-      result = Github.Users.Emails.list!("access_token")
-      assert result == [
+      response = Github.Users.Emails.list!("access_token")
+
+      assert response.status == 200
+      assert response.body == [
         %{"email" => "email1@example.com", "primary" => true, "verified" => true, "visibility" => "private"},
         %{"email" => "email2@example.com", "primary" => false, "verified" => true, "visibility" => nil}
       ]

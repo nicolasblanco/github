@@ -5,15 +5,17 @@ defmodule Github.Orgs do
   ## Example
 
       iex> Github.Orgs.user_list!("access_token")
-      []
+      %Github.Response{
+        body: [%{"id" => 1234, ...}],
+        status: 200,
+        headers: [...]
+      }
   """
 
   def user_list!(access_token) do
-    response = get!(
+    get!(
       "https://api.github.com/user/orgs",
       [{"Authorization", "token #{access_token}"}]
-    )
-
-    from_json!(response.body)
+    ) |> to_github_response
   end
 end

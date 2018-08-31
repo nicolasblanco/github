@@ -4,12 +4,7 @@ defmodule Github.Repos.StatusesTest do
 
   test "creates the status" do
     use_cassette "repos/statuses.create!" do
-      %{
-        "state" => state,
-        "target_url" => target_url,
-        "description" => description,
-        "context" => context
-      } = Github.Repos.Statuses.create!(
+      response = Github.Repos.Statuses.create!(
         "access_token",
         repo_path: "tester003/test",
         sha: "28e85be9a17c94056fde437c11a60069dfc41924",
@@ -19,10 +14,11 @@ defmodule Github.Repos.StatusesTest do
         context: "WorkflowCI"
       )
 
-      assert state == "success"
-      assert target_url == "https://www.workflowci.com"
-      assert description == "It is green, yay!"
-      assert context == "WorkflowCI"
+      assert response.status == 201
+      assert response.body["state"] == "success"
+      assert response.body["target_url"] == "https://www.workflowci.com"
+      assert response.body["description"] == "It is green, yay!"
+      assert response.body["context"] == "WorkflowCI"
     end
   end
 end

@@ -30,6 +30,6 @@ end
 ## Testing
 
 ```
-make install
-make test
+mix deps.get
+mix test
 ```
