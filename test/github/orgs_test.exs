@@ -10,4 +10,13 @@ defmodule Github.OrgsTest do
       assert response.body == []
     end
   end
+
+  test "returns an organization" do
+    use_cassette "orgs.find!" do
+      response = Github.Orgs.find!("access_token", "WorkflowCI")
+
+      assert response.status == 200
+      assert response.body["name"] == "WorkflowCI"
+    end
+  end
 end
