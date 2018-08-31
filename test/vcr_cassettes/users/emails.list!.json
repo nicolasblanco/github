@@ -1,0 +1,47 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/user/emails"
+    },
+    "response": {
+      "binary": false,
+      "body": "[{\"email\":\"email1@example.com\",\"primary\":true,\"verified\":true,\"visibility\":\"private\"},{\"email\":\"email2@example.com\",\"primary\":false,\"verified\":true,\"visibility\":null}]",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Fri, 31 Aug 2018 03:17:50 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "209",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4991",
+        "X-RateLimit-Reset": "1535686723",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"86dc771552b07a4f119efc8a30e4ff62\"",
+        "X-OAuth-Scopes": "read:org, user:email",
+        "X-Accepted-OAuth-Scopes": "user, user:email",
+        "X-OAuth-Client-Id": "2353ce313dbf097bc20a",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-Runtime-rack": "0.039845",
+        "X-GitHub-Request-Id": "F720:35BA:B9314:1CA967:5B88B35E"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

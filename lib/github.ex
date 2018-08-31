@@ -7,6 +7,8 @@ defmodule Github do
     * [Organizations](/github/Github.Orgs.html)
     * Repositories
       * [Statuses](/github/Github.Repos.Statuses.html)
+    * Users
+      * [Emails](/github/Github.Users.Emails.html)
   """
 
   def to_json!(map) do

@@ -11,6 +11,8 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 * [Organizations](https://developer.github.com/v3/orgs/)
 * [Repositories](https://developer.github.com/v3/repos/)
   * [Statuses](https://developer.github.com/v3/repos/statuses/)
+* [Users](https://developer.github.com/v3/users/)
+  * [Emails](https://developer.github.com/v3/users/emails/)
 
 ## Installation
 

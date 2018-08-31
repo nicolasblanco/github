@@ -3,7 +3,7 @@ defmodule Github.Repos.StatusesTest do
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   test "creates the status" do
-    use_cassette "repos/statuses#create!" do
+    use_cassette "repos/statuses.create!" do
       %{
         "state" => state,
         "target_url" => target_url,
