@@ -4,6 +4,7 @@ defmodule Github do
 
     Resources:
 
+    * [Organizations](/github/Github.Orgs.html)
     * Repositories
       * [Statuses](/github/Github.Repos.Statuses.html)
   """
@@ -18,5 +19,9 @@ defmodule Github do
 
   def post!(url, body, headers) do
     HTTPoison.post!(url, body, headers)
+  end
+
+  def get!(url, headers) do
+    HTTPoison.get!(url, headers)
   end
 end

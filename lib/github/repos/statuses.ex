@@ -32,7 +32,7 @@ defmodule Github.Repos.Statuses do
       state: opts.state,
       target_url: opts.target_url,
       description: opts.description,
-      context: Map.get(opts, :context, "default")
+      context: opts.context
     })
     headers = [
       {"Authorization", "token #{access_token}"},
