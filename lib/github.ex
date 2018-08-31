@@ -1,6 +1,6 @@
 defmodule Github do
   @moduledoc """
-    The simplest client for GitHub [REST API v3](https://developer.github.com/v3/).
+    The simplest Elixir client for GitHub [REST API v3](https://developer.github.com/v3/).
 
     Resources:
 

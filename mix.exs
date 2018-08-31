@@ -36,7 +36,7 @@ defmodule Github.MixProject do
   end
 
   defp description() do
-    "The simplest client for GitHub REST API v3."
+    "The simplest Elixir client for GitHub REST API v3."
   end
 
   defp package do
