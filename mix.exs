@@ -12,7 +12,8 @@ defmodule Github.MixProject do
       deps: deps(),
       description: description(),
       package: package(),
-      source_url: "https://github.com/WorkflowCI/github"
+      source_url: "https://github.com/WorkflowCI/github",
+      test_coverage: [tool: ExCoveralls],
     ]
   end
 
@@ -31,7 +32,8 @@ defmodule Github.MixProject do
 
       {:ex_doc, "~> 0.18.0", only: :dev},
 
-      {:exvcr, "~> 0.10", only: :test}
+      {:exvcr, "~> 0.10", only: :test},
+      {:excoveralls, "~> 0.10", only: :test},
     ]
   end
 
