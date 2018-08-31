@@ -1,5 +1,5 @@
 defmodule Github.Repos.Statuses do
-  import Github
+  import Github.Client
 
   @create_default_options %{
     context: "default"
@@ -16,7 +16,7 @@ defmodule Github.Repos.Statuses do
         description: "It is green, yay!",
         context: "WorkflowCI"
       )
-      %Github.Response{
+      %Github.Client.Response{
         body: %{"context" => "WorkflowCI", ...},
         status: 201,
         headers: [...]
@@ -36,6 +36,6 @@ defmodule Github.Repos.Statuses do
       {"Accept", "application/vnd.github.howard-the-duck-preview+json"},
     ]
 
-    post!(url, body, headers) |> to_github_response(github_client)
+    post!(url, body, headers)
   end
 end

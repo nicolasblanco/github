@@ -1,0 +1,46 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "***",
+        "Accept": "application/vnd.github.machine-man-preview+json"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/installation/repositories?per_page=1&page=2"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"total_count\":77,\"repository_selection\":\"all\",\"repositories\":[{\"id\":22839526,\"node_id\":\"MDEwOlJlcG9zaXRvcnkyMjgzOTUyNg==\",\"name\":\"github2\",\"full_name\":\"WorkflowCI/github2\",\"owner\":{\"login\":\"WorkflowCI\",\"id\":577441,\"node_id\":\"MDQ6VXNlcjU3NzQ0MQ==\",\"avatar_url\":\"https://avatars2.githubusercontent.com/u/577441?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/WorkflowCI\",\"html_url\":\"https://github.com/WorkflowCI\",\"followers_url\":\"https://api.github.com/users/WorkflowCI/followers\",\"following_url\":\"https://api.github.com/users/WorkflowCI/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/WorkflowCI/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/WorkflowCI/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/WorkflowCI/subscriptions\",\"organizations_url\":\"https://api.github.com/users/WorkflowCI/orgs\",\"repos_url\":\"https://api.github.com/users/WorkflowCI/repos\",\"events_url\":\"https://api.github.com/users/WorkflowCI/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/WorkflowCI/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/WorkflowCI/github2\",\"description\":\"Lightweight resource's view counter\",\"fork\":false,\"url\":\"https://api.github.com/repos/WorkflowCI/github2\",\"forks_url\":\"https://api.github.com/repos/WorkflowCI/github2/forks\",\"keys_url\":\"https://api.github.com/repos/WorkflowCI/github2/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/WorkflowCI/github2/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/WorkflowCI/github2/teams\",\"hooks_url\":\"https://api.github.com/repos/WorkflowCI/github2/hooks\",\"issue_events_url\":\"https://api.github.com/repos/WorkflowCI/github2/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/WorkflowCI/github2/events\",\"assignees_url\":\"https://api.github.com/repos/WorkflowCI/github2/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/WorkflowCI/github2/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/WorkflowCI/github2/tags\",\"blobs_url\":\"https://api.github.com/repos/WorkflowCI/github2/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/WorkflowCI/github2/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/WorkflowCI/github2/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/WorkflowCI/github2/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/WorkflowCI/github2/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/WorkflowCI/github2/languages\",\"stargazers_url\":\"https://api.github.com/repos/WorkflowCI/github2/stargazers\",\"contributors_url\":\"https://api.github.com/repos/WorkflowCI/github2/contributors\",\"subscribers_url\":\"https://api.github.com/repos/WorkflowCI/github2/subscribers\",\"subscription_url\":\"https://api.github.com/repos/WorkflowCI/github2/subscription\",\"commits_url\":\"https://api.github.com/repos/WorkflowCI/github2/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/WorkflowCI/github2/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/WorkflowCI/github2/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/WorkflowCI/github2/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/WorkflowCI/github2/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/WorkflowCI/github2/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/WorkflowCI/github2/merges\",\"archive_url\":\"https://api.github.com/repos/WorkflowCI/github2/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/WorkflowCI/github2/downloads\",\"issues_url\":\"https://api.github.com/repos/WorkflowCI/github2/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/WorkflowCI/github2/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/WorkflowCI/github2/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/WorkflowCI/github2/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/WorkflowCI/github2/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/WorkflowCI/github2/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/WorkflowCI/github2/deployments\",\"created_at\":\"2014-08-11T13:15:16Z\",\"updated_at\":\"2014-08-11T13:16:33Z\",\"pushed_at\":\"2014-08-11T13:41:21Z\",\"git_url\":\"git://github.com/WorkflowCI/github2.git\",\"ssh_url\":\"git@github.com:WorkflowCI/github2.git\",\"clone_url\":\"https://github.com/WorkflowCI/github2.git\",\"svn_url\":\"https://github.com/WorkflowCI/github2\",\"homepage\":null,\"size\":124,\"stargazers_count\":0,\"watchers_count\":0,\"language\":\"Ruby\",\"has_issues\":true,\"has_projects\":true,\"has_downloads\":true,\"has_wiki\":true,\"has_pages\":false,\"forks_count\":0,\"mirror_url\":null,\"archived\":false,\"open_issues_count\":0,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"node_id\":\"MDc6TGljZW5zZTEz\"},\"forks\":0,\"open_issues\":0,\"watchers\":0,\"default_branch\":\"master\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":false}}]}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Fri, 31 Aug 2018 20:49:12 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "5571",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "7750",
+        "X-RateLimit-Remaining": "7742",
+        "X-RateLimit-Reset": "1535749300",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"8a8148c31e190481eabbb27306e07b9d\"",
+        "X-GitHub-Media-Type": "github.machine-man-preview; format=json",
+        "Link": "<https://api.github.com/installation/repositories?per_page=1&page=1>; rel=\"prev\", <https://api.github.com/installation/repositories?per_page=1&page=3>; rel=\"next\", <https://api.github.com/installation/repositories?per_page=1&page=77>; rel=\"last\", <https://api.github.com/installation/repositories?per_page=1&page=1>; rel=\"first\"",
+        "Access-Control-Expose-Headers": "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-Runtime-rack": "0.049293",
+        "X-GitHub-Request-Id": "1CE9:7BBB:395EF9:8F0B42:5B89A9C7"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

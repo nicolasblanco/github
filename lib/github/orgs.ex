@@ -1,5 +1,5 @@
 defmodule Github.Orgs do
-  import Github
+  import Github.Client
 
   @user_list_default_options %{
     page: 1,
@@ -10,7 +10,7 @@ defmodule Github.Orgs do
   ## Example
 
       iex> %Github.Client{access_token: "access_token"} |> Github.Orgs.user_list!(page: 1, per_page: 30)
-      %Github.Response{
+      %Github.Client.Response{
         body: [%{"name" => "WorkflowCI", ...}],
         status: 200,
         headers: [...]
@@ -22,14 +22,14 @@ defmodule Github.Orgs do
     get!(
       "https://api.github.com/user/orgs?page=#{opts.page}&per_page=#{opts.per_page}",
       [{"Authorization", "token #{github_client.access_token}"}]
-    ) |> to_github_response(github_client)
+    )
   end
 
   @doc """
   ## Example
 
       iex> %Github.Client{access_token: "access_token"} |> Github.Orgs.find!("WorkflowCI")
-      %Github.Response{
+      %Github.Client.Response{
         body: [%{"name" => "WorkflowCI", ...}],
         status: 200,
         headers: [...]
@@ -39,6 +39,6 @@ defmodule Github.Orgs do
     get!(
       "https://api.github.com/orgs/#{name}",
       [{"Authorization", "token #{github_client.access_token}"}]
-    ) |> to_github_response(github_client)
+    )
   end
 end

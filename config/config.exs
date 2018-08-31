@@ -32,9 +32,11 @@ use Mix.Config
 config :exvcr, [
   vcr_cassette_library_dir: "test/vcr_cassettes",
   filter_sensitive_data: [
-    [pattern: "tester003/test", placeholder: "WorkflowCI/github"],
     [pattern: "tester003", placeholder: "WorkflowCI"],
     [pattern: "test", placeholder: "github"],
+    [pattern: "exAspArk", placeholder: "WorkflowCI"],
+    [pattern: "acts_as_list", placeholder: "github1"],
+    [pattern: "acts_as_view_countable", placeholder: "github2"]
   ],
   filter_url_params: false,
   filter_request_headers: ["Authorization"],
