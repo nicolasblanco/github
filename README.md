@@ -1,7 +1,7 @@
 # GitHub Elixir
 
-![Travis (.org)](https://img.shields.io/travis/WorkflowCI/github.svg)
-![Hex.pm](https://img.shields.io/hexpm/v/github.svg)
+[![Build Status](https://img.shields.io/travis/WorkflowCI/github.svg)](https://travis-ci.org/WorkflowCI/github)
+[![Latest Version](https://img.shields.io/hexpm/v/github.svg)](https://hex.pm/packages/github)
 
 The simplest client for GitHub [REST API v3](https://developer.github.com/v3/).
 
