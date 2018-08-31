@@ -8,11 +8,12 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 
 ## Resources
 
-* [Organizations](https://developer.github.com/v3/orgs/)
-* [Repositories](https://developer.github.com/v3/repos/)
-  * [Statuses](https://developer.github.com/v3/repos/statuses/)
-* [Users](https://developer.github.com/v3/users/)
-  * [Emails](https://developer.github.com/v3/users/emails/)
+
+* [Organizations](https://hexdocs.pm/github/Github.Orgs.html)
+* Repositories
+  * [Statuses](https://hexdocs.pm/github/Github.Repos.Statuses.html)
+* Users
+  * [Emails](https://hexdocs.pm/github/Github.Users.Emails.html)
 
 ## Installation
 
