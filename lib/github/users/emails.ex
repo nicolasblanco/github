@@ -9,19 +9,19 @@ defmodule Github.Users.Emails do
   @doc """
   ## Example
 
-      iex> Github.Users.Emails.list!("access_token", page: 1, per_page: 30)
+      iex> %Github.Client{access_token: "access_token"} |> Github.Users.Emails.list!(page: 1, per_page: 30)
       %Github.Response{
         body: [%{"email" => "email@example.com", "primary" => true, "verified" => true, "visibility" => "private"}],
         status: 200,
         headers: [...]
       }
   """
-  def list!(access_token, options \\ []) do
+  def list!(github_client, options \\ []) do
     opts = Enum.into(options, @list_default_options)
 
     get!(
       "https://api.github.com/user/emails?page=#{opts.page}&per_page=#{opts.per_page}",
-      [{"Authorization", "token #{access_token}"}]
-    ) |> to_github_response
+      [{"Authorization", "token #{github_client.access_token}"}]
+    ) |> to_github_response(github_client)
   end
 end

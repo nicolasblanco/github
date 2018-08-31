@@ -4,7 +4,7 @@ defmodule Github.Users.EmailsTest do
 
   test "returns a list" do
     use_cassette "users/emails.list!" do
-      response = Github.Users.Emails.list!("access_token")
+      response = %Github.Client{access_token: "access_token"} |> Github.Users.Emails.list!()
 
       assert response.status == 200
       assert response.body == [

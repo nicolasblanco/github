@@ -8,8 +8,7 @@ defmodule Github.Repos.Statuses do
   @doc """
   ## Example
 
-      iex> Github.Repos.Statuses.create!(
-        "access_token",
+      iex> %Github.Client{access_token: "access_token"} |> Github.Repos.Statuses.create!(
         repo_path: "workflowci/github",
         sha: "sha",
         state: "success",
@@ -23,8 +22,7 @@ defmodule Github.Repos.Statuses do
         headers: [...]
       }
   """
-
-  def create!(access_token, options \\ []) do
+  def create!(github_client, options \\ []) do
     opts = Enum.into(options, @create_default_options)
     url = "https://api.github.com/repos/#{opts.repo_path}/statuses/#{opts.sha}"
     body = to_json!(%{
@@ -34,10 +32,10 @@ defmodule Github.Repos.Statuses do
       context: opts.context
     })
     headers = [
-      {"Authorization", "token #{access_token}"},
+      {"Authorization", "token #{github_client.access_token}"},
       {"Accept", "application/vnd.github.howard-the-duck-preview+json"},
     ]
 
-    post!(url, body, headers) |> to_github_response
+    post!(url, body, headers) |> to_github_response(github_client)
   end
 end

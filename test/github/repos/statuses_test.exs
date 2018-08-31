@@ -4,9 +4,8 @@ defmodule Github.Repos.StatusesTest do
 
   test "creates the status" do
     use_cassette "repos/statuses.create!" do
-      response = Github.Repos.Statuses.create!(
-        "access_token",
-        repo_path: "tester003/test",
+      response = %Github.Client{access_token: "access_token"} |> Github.Repos.Statuses.create!(
+        repo_path: "WorkflowCI/github",
         sha: "28e85be9a17c94056fde437c11a60069dfc41924",
         state: "success",
         target_url: "https://www.workflowci.com",

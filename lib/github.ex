@@ -4,6 +4,8 @@ defmodule Github do
 
     Resources:
 
+    * Apps
+      * [Installations](/github/Github.Apps.Installations.html)
     * [Organizations](/github/Github.Orgs.html)
     * Repositories
       * [Statuses](/github/Github.Repos.Statuses.html)
@@ -27,11 +29,12 @@ defmodule Github do
     HTTPoison.get!(url, headers)
   end
 
-  def to_github_response(response) do
+  def to_github_response(response, github_client) do
     %Github.Response{
       body: from_json!(response.body),
       headers: response.headers,
-      status: response.status_code
+      status: response.status_code,
+      github_client: github_client
     }
   end
 end
