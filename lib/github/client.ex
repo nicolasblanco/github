@@ -104,6 +104,8 @@ defmodule Github.Client do
           ...
         }
       ]
+
+  To reduce number of HTTP requests it is recommended to specify the largest `per_page` value `100` in the first request.
   """
   def fetch_all!(github_response) do
     fetch_all!(github_response, []) |> Enum.reverse

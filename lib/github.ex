@@ -8,6 +8,7 @@ defmodule Github do
       * [Installations](/github/Github.Apps.Installations.html)
     * [Organizations](/github/Github.Orgs.html)
     * Repositories
+      * [Contents](/github/Github.Repos.Contents.html)
       * [Statuses](/github/Github.Repos.Statuses.html)
     * Users
       * [Emails](/github/Github.Users.Emails.html)
