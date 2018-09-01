@@ -1,0 +1,46 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/WorkflowCI/github/git/refs/heads/master"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"ref\":\"refs/heads/master\",\"node_id\":\"MDM6UmVmMTMyODQzNTM2Om1hc3Rlcg==\",\"url\":\"https://api.github.com/repos/WorkflowCI/github/git/refs/heads/master\",\"object\":{\"sha\":\"28e85be9a17c94056fde437c11a60069dfc41924\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/WorkflowCI/github/git/commits/28e85be9a17c94056fde437c11a60069dfc41924\"}}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Sat, 01 Sep 2018 03:10:02 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "327",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4996",
+        "X-RateLimit-Reset": "1535773342",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"17c378359807328efc73c83a01b80a9b\"",
+        "Last-Modified": "Sat, 25 Aug 2018 22:33:31 GMT",
+        "X-Poll-Interval": "300",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-Runtime-rack": "0.047583",
+        "X-GitHub-Request-Id": "DCA9:35BE:7E635A:1146AC2:5B8A030A"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

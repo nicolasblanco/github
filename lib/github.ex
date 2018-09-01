@@ -6,6 +6,8 @@ defmodule Github do
 
     * Apps
       * [Installations](/github/Github.Apps.Installations.html)
+    * Git
+      * [References](/github/Github.Git.Refs.html)
     * [Organizations](/github/Github.Orgs.html)
     * Repositories
       * [Contents](/github/Github.Repos.Contents.html)

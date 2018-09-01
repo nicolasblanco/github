@@ -19,9 +19,9 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 `Github` library supports multiple [API Resouces](#api-resources). For example, `Github.Users.Emails.list!` allows getting user's emails:
 
 ```elixir
-client = %Github.Client{access_token: "access_token"}
+iex> client = %Github.Client{access_token: "access_token"}
 
-client |> Github.Users.Emails.list!()
+iex> client |> Github.Users.Emails.list!()
 %Github.Client.Response{
   status: 200,
   headers: [
@@ -41,9 +41,9 @@ client |> Github.Users.Emails.list!()
 For pagination, the client has such functions as `Github.Client.fetch_more!` and `Github.Client.fetch_all!`. Here is an example:
 
 ```elixir
-client = %Github.Client{access_token: "access_token"}
+iex> client = %Github.Client{access_token: "access_token"}
 
-first_page = client |> Github.Users.Emails.list!(page: 1, per_page: 1)
+iex> first_page = client |> Github.Users.Emails.list!(page: 1, per_page: 1)
 %Github.Client.Response{
   status: 200,
   headers: [...],
@@ -55,7 +55,7 @@ first_page = client |> Github.Users.Emails.list!(page: 1, per_page: 1)
   ...
 }
 
-Github.Client.fetch_more!(first_page)
+iex> Github.Client.fetch_more!(first_page)
 %Github.Client.Response{
   status: 200,
   headers: [...],
@@ -68,13 +68,14 @@ Github.Client.fetch_more!(first_page)
 }
 ```
 
-
 Please visit [hexdocs.pm/github](https://hexdocs.pm/github/api-reference.html) to find more code examples.
 
 ## API Resources
 
 * Apps
   * [Installations](https://hexdocs.pm/github/Github.Apps.Installations.html)
+* Git
+  * [References](https://hexdocs.pm/github/Github.Git.Refs.html)
 * [Organizations](https://hexdocs.pm/github/Github.Orgs.html)
 * Repositories
   * [Contents](https://hexdocs.pm/github/Github.Repos.Contents.html)
