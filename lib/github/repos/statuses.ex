@@ -6,9 +6,13 @@ defmodule Github.Repos.Statuses do
   }
 
   @doc """
+  Create a status for a specific commit SHA
+
   ## Example
 
-      iex> %Github.Client{access_token: "access_token"} |> Github.Repos.Statuses.create!(
+      iex> client = %Github.Client{access_token: "access_token"}
+
+      iex> client |> Github.Repos.Statuses.create!(
         repo_path: "workflowci/github",
         sha: "sha",
         state: "success",
@@ -19,7 +23,7 @@ defmodule Github.Repos.Statuses do
       %Github.Client.Response{
         body: %{"context" => "WorkflowCI", ...},
         status: 201,
-        headers: [...]
+        ...
       }
   """
   def create!(github_client, options \\ []) do

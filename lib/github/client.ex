@@ -46,6 +46,28 @@ defmodule Github.Client do
     }
   end
 
+  @doc """
+  The next paginated page
+
+  ## Example
+
+      iex> client = %Github.Client{access_token: "access_token"}
+      iex> response1 = client |> Github.Apps.Installations.list_repos!(per_page: 1)
+      %Github.Client.Response{
+        next_url: "https://api.github.com/installation/repositories?per_page=1&page=2",
+        last_url: "https://api.github.com/installation/repositories?per_page=1&page=77",
+        status: 200,
+        ...
+      }
+
+      iex> response2 = client.fetch_more!(response1)
+      %Github.Client.Response{
+        next_url: "https://api.github.com/installation/repositories?per_page=1&page=3",
+        last_url: "https://api.github.com/installation/repositories?per_page=1&page=77",
+        status: 200,
+        ...
+      }
+  """
   def fetch_more!(github_response) do
     case github_response.next_url do
       nil -> nil
@@ -53,6 +75,36 @@ defmodule Github.Client do
     end
   end
 
+  @doc """
+  The rest of the paginated pages
+
+  ## Example
+
+      iex> client = %Github.Client{access_token: "access_token"}
+      iex> response1 = client |> Github.Apps.Installations.list_repos!(per_page: 30)
+      %Github.Client.Response{
+        next_url: "https://api.github.com/installation/repositories?per_page=30&page=2",
+        last_url: "https://api.github.com/installation/repositories?per_page=30&page=3",
+        status: 200,
+        ...
+      }
+
+      iex> responses = client.fetch_all!(response1)
+      [
+        %Github.Client.Response{
+          next_url: "https://api.github.com/installation/repositories?per_page=30&page=3",
+          last_url: "https://api.github.com/installation/repositories?per_page=30&page=3",
+          status: 200,
+          ...
+        },
+        %Github.Client.Response{
+          next_url: nil,
+          last_url: "https://api.github.com/installation/repositories?per_page=30&page=3",
+          status: 200,
+          ...
+        }
+      ]
+  """
   def fetch_all!(github_response) do
     fetch_all!(github_response, []) |> Enum.reverse
   end

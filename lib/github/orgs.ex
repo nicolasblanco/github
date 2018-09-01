@@ -7,13 +7,17 @@ defmodule Github.Orgs do
   }
 
   @doc """
+  User organizations
+
   ## Example
 
-      iex> %Github.Client{access_token: "access_token"} |> Github.Orgs.user_list!(page: 1, per_page: 30)
+      iex> client = %Github.Client{access_token: "access_token"}
+
+      iex> client |> Github.Orgs.user_list!(page: 1, per_page: 30)
       %Github.Client.Response{
         body: [%{"name" => "WorkflowCI", ...}],
         status: 200,
-        headers: [...]
+        ...
       }
   """
   def user_list!(github_client, options \\ []) do
@@ -26,13 +30,17 @@ defmodule Github.Orgs do
   end
 
   @doc """
+  User organization
+
   ## Example
 
-      iex> %Github.Client{access_token: "access_token"} |> Github.Orgs.find!("WorkflowCI")
+      iex> client = %Github.Client{access_token: "access_token"}
+
+      iex> client |> Github.Orgs.find!("WorkflowCI")
       %Github.Client.Response{
         body: [%{"name" => "WorkflowCI", ...}],
         status: 200,
-        headers: [...]
+        ...
       }
   """
   def find!(github_client, name) do

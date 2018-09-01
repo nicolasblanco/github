@@ -7,13 +7,17 @@ defmodule Github.Apps.Installations do
   }
 
   @doc """
+  List repositories available for the Installation
+
   ## Example
 
-      iex> %Github.Client{access_token: "access_token"} |> Github.Apps.Installations.list_repos!(page: 1, per_page: 30)
+      iex> client = %Github.Client{access_token: "access_token"}
+
+      iex> client |> Github.Apps.Installations.list_repos!(page: 1, per_page: 30)
       %Github.Client.Response{
         body: [%{"email" => "email@example.com", "primary" => true, "verified" => true, "visibility" => "private"}],
         status: 200,
-        headers: [...]
+        ...
       }
   """
   def list_repos!(github_client, options \\ []) do

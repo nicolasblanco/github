@@ -7,13 +7,17 @@ defmodule Github.Users.Emails do
   }
 
   @doc """
+  User emails
+
   ## Example
 
-      iex> %Github.Client{access_token: "access_token"} |> Github.Users.Emails.list!(page: 1, per_page: 30)
+      iex> client = %Github.Client{access_token: "access_token"}
+
+      iex> client |> Github.Users.Emails.list!(page: 1, per_page: 30)
       %Github.Client.Response{
         body: [%{"email" => "email@example.com", "primary" => true, "verified" => true, "visibility" => "private"}],
         status: 200,
-        headers: [...]
+        ...
       }
   """
   def list!(github_client, options \\ []) do
