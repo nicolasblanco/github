@@ -8,9 +8,14 @@ one of the following labels: `Added`, `Changed`, `Deprecated`,
 to manage the versions of this gem so
 that you can set version constraints properly.
 
-#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.6.0...HEAD)
+#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.7.0...HEAD)
 
 * WIP
+
+#### [v0.7.0](https://github.com/WorkflowCI/github/compare/v0.6.0...v0.7.0) – 2018-08-31
+
+* `Added`: `Github.Repos.Contents`.
+* `Added`: `Github.Git.Refs`.
 
 #### [v0.6.0](https://github.com/WorkflowCI/github/compare/v0.5.0...v0.6.0) – 2018-08-31
 
