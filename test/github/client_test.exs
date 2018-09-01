@@ -3,10 +3,11 @@ defmodule Github.ClientTest do
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   test "returns pagination info" do
-    use_cassette "client#pagination" do
+    use_cassette "client#pagination_1" do
       client = %Github.Client{access_token: "access_token"}
       response = Github.Apps.Installations.list_repos!(client, per_page: 1)
 
+      assert length(response.body["repositories"]) == 1
       assert response.next_page == "2"
       assert response.last_page == "77"
       assert response.next_url == "https://api.github.com/installation/repositories?per_page=1&page=2"
@@ -15,12 +16,13 @@ defmodule Github.ClientTest do
   end
 
   test "Github.Client.fetch_more! returns more results" do
-    table = :ets.new(:buckets_registry, [:set, :protected])
+    table = :ets.new(:test, [:set])
     client = %Github.Client{access_token: "access_token"}
-
-    use_cassette "client#pagination" do
-      response1 = Github.Apps.Installations.list_repos!(client, per_page: 1)
-      :ets.insert(table, {"response1", response1})
+    use_cassette "client#pagination_1" do
+      :ets.insert(
+        table,
+        {"response1", Github.Apps.Installations.list_repos!(client, per_page: 1)}
+      )
     end
 
     use_cassette "client.fetch_more!" do
@@ -28,7 +30,28 @@ defmodule Github.ClientTest do
       response2 = Github.Client.fetch_more!(response1)
 
       assert response2.status == 200
-      assert response2.body["repositories"] |> Enum.at(0) |> Map.get("name") == "github2"
+      assert length(response2.body["repositories"]) == 1
+    end
+  end
+
+  test "Github.Client.fetch_all! returns the rest of the results" do
+    table = :ets.new(:test, [:set])
+    client = %Github.Client{access_token: "access_token"}
+    use_cassette "client#pagination_50" do
+      :ets.insert(
+        table,
+        {"response1", Github.Apps.Installations.list_repos!(client, per_page: 50)}
+      )
+    end
+
+    use_cassette "client.fetch_all!" do
+      [{"response1", response1}] = :ets.lookup(table, "response1")
+      responses = Github.Client.fetch_all!(response1)
+
+      assert length(responses) == 1
+      [response2] = responses
+      assert response2.status == 200
+      assert length(response2.body["repositories"]) == 27
     end
   end
 end

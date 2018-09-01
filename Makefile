@@ -13,4 +13,4 @@ publish:
 	mix hex.publish
 
 test:
-	iex -S mix test
+	iex -S mix test --trace

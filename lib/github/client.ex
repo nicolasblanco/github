@@ -53,6 +53,19 @@ defmodule Github.Client do
     end
   end
 
+  def fetch_all!(github_response) do
+    fetch_all!(github_response, []) |> Enum.reverse
+  end
+
+  defp fetch_all!(github_response, acc) do
+    github_response = fetch_more!(github_response)
+
+    case github_response do
+      nil -> acc
+      _ -> fetch_all!(github_response, [github_response | acc])
+    end
+  end
+
   defp next_link_header(response) do
     link_header = Enum.find(response.headers, fn({header, _value}) -> header == "Link" end)
 
