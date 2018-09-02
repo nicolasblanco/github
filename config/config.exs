@@ -37,4 +37,6 @@ config :exvcr, [
 #
 #     import_config "#{Mix.env}.exs"
 
-# import_config "test.exs"
+if File.exists?("config/test.exs") do
+  import_config "test.exs"
+end

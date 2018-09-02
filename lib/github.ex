@@ -13,6 +13,7 @@ defmodule Github do
       * [Commits](/github/Github.Repos.Commits.html)
       * [Contents](/github/Github.Repos.Contents.html)
       * [Statuses](/github/Github.Repos.Statuses.html)
+    * [Pull Requests](/github/Github.Pulls.html)
     * Users
       * [Emails](/github/Github.Users.Emails.html)
   """
