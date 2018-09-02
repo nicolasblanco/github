@@ -10,6 +10,10 @@ docs:
 	mix docs
 
 publish:
+	git commit -v -m "Release $(VERSION)" && \
+	git push && \
+	git tag $(VERSION) && \
+	git push --tags && \
 	mix hex.publish
 
 test:

@@ -78,6 +78,7 @@ Please visit [hexdocs.pm/github](https://hexdocs.pm/github/api-reference.html) t
   * [References](https://hexdocs.pm/github/Github.Git.Refs.html)
 * [Organizations](https://hexdocs.pm/github/Github.Orgs.html)
 * Repositories
+  * [Commits](https://hexdocs.pm/github/Github.Repos.Commits.html)
   * [Contents](https://hexdocs.pm/github/Github.Repos.Contents.html)
   * [Statuses](https://hexdocs.pm/github/Github.Repos.Statuses.html)
 * Users

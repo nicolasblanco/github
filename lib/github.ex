@@ -10,6 +10,7 @@ defmodule Github do
       * [References](/github/Github.Git.Refs.html)
     * [Organizations](/github/Github.Orgs.html)
     * Repositories
+      * [Commits](/github/Github.Repos.Commits.html)
       * [Contents](/github/Github.Repos.Contents.html)
       * [Statuses](/github/Github.Repos.Statuses.html)
     * Users
