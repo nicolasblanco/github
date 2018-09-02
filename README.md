@@ -91,7 +91,7 @@ The package can be installed by adding `github` to your list of dependencies in 
 ```elixir
 def deps do
   [
-    {:github, "~> 0.7"}
+    {:github, "~> 0.8.0"}
   ]
 end
 ```
