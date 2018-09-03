@@ -16,7 +16,8 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 
 ## Usage
 
-`Github` library supports multiple [API Resouces](#api-resources). For example, `Github.Users.Emails.list!` allows getting user's emails:
+`Github` library supports multiple [API Resources](#api-resources).
+For example, [Github.Users.Emails.list!](https://hexdocs.pm/github/Github.Users.Emails.html#list!/2) allows getting user's emails:
 
 ```elixir
 iex> client = %Github.Client{access_token: "access_token"}
@@ -38,7 +39,7 @@ iex> client |> Github.Users.Emails.list!()
 
 ### Pagination
 
-For pagination, the client has such functions as `Github.Client.fetch_more!` and `Github.Client.fetch_all!`. Here is an example:
+For pagination, the client has such functions as [Github.Client.fetch_more!](https://hexdocs.pm/github/Github.Client.html#fetch_more!/1) and [Github.Client.fetch_all!](https://hexdocs.pm/github/Github.Client.html#fetch_all!/1). Here is an example:
 
 ```elixir
 iex> client = %Github.Client{access_token: "access_token"}

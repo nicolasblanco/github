@@ -6,6 +6,10 @@ defmodule Github.Apps.Installations do
     per_page: 30
   }
 
+  @moduledoc """
+    GitHub Apps [Installations](https://developer.github.com/v3/apps/installations/).
+  """
+
   @doc """
   List repositories available for the Installation
 
@@ -26,6 +30,30 @@ defmodule Github.Apps.Installations do
       "https://api.github.com/installation/repositories?per_page=#{opts.per_page}&page=#{opts.page}",
       [
         {"Authorization", "token #{github_client.access_token}"},
+        {"Accept", "application/vnd.github.machine-man-preview+json"}
+      ]
+    )
+  end
+
+  @doc """
+  Get an installation
+
+  ## Example
+
+      iex> client = %Github.Client{jwt_token: "jwt_token"}
+
+      iex> client |> Github.Apps.Installations.find!(12345)
+      %Github.Client.Response{
+        body: %{"id" => 12345, ...},
+        status: 200,
+        ...
+      }
+  """
+  def find!(github_client, installation_id) do
+    get!(
+      "https://api.github.com/app/installations/#{installation_id}",
+      [
+        {"Authorization", "Bearer #{github_client.jwt_token}"},
         {"Accept", "application/vnd.github.machine-man-preview+json"}
       ]
     )

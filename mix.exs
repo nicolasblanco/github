@@ -12,6 +12,7 @@ defmodule Github.MixProject do
       deps: deps(),
       description: description(),
       package: package(),
+      docs: docs_config(),
       source_url: "https://github.com/WorkflowCI/github",
       test_coverage: [tool: ExCoveralls],
     ]
@@ -46,6 +47,16 @@ defmodule Github.MixProject do
       maintainers: ["exAspArk"],
       licenses: ["MIT"],
       links: %{"Github" => "https://github.com/WorkflowCI/github"}
+    ]
+  end
+
+  defp docs_config do
+    [
+      extras: [
+        {"README.md", [title: "Overview"]},
+        {"CHANGELOG.md", [title: "Changelog"]}
+      ],
+      main: "readme"
     ]
   end
 end

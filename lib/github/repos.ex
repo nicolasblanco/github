@@ -1,6 +1,10 @@
 defmodule Github.Repos do
   import Github.Client
 
+  @moduledoc """
+    [Repositories](https://developer.github.com/v3/repos/).
+  """
+
   @doc """
   Get a repository
 

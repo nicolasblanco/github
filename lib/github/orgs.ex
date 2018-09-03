@@ -6,6 +6,10 @@ defmodule Github.Orgs do
     per_page: 30
   }
 
+  @moduledoc """
+    [Organizations](https://developer.github.com/v3/orgs/).
+  """
+
   @doc """
   User organizations
 

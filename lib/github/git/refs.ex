@@ -5,6 +5,10 @@ defmodule Github.Git.Refs do
     branch: "master"
   }
 
+  @moduledoc """
+    Git Data [References](https://developer.github.com/v3/git/refs/).
+  """
+
   @doc """
   User emails
 

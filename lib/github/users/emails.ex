@@ -6,6 +6,10 @@ defmodule Github.Users.Emails do
     per_page: 30
   }
 
+  @moduledoc """
+    Users [Emails](https://developer.github.com/v3/users/emails/).
+  """
+
   @doc """
   User emails
 

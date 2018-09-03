@@ -5,6 +5,10 @@ defmodule Github.Repos.Statuses do
     context: "default"
   }
 
+  @moduledoc """
+    Repositories [Statuses](https://developer.github.com/v3/repos/statuses/).
+  """
+
   @doc """
   Create a status for a specific commit SHA
 

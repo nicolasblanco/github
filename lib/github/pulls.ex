@@ -7,6 +7,10 @@ defmodule Github.Pulls do
     per_page: 30
   }
 
+  @moduledoc """
+    [Pull Requests](https://developer.github.com/v3/pulls/).
+  """
+
   @doc """
   List pull requests
 

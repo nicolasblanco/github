@@ -1,6 +1,10 @@
 defmodule Github.Repos.Commits do
   import Github.Client
 
+  @moduledoc """
+    Repositories [Commits](https://developer.github.com/v3/repos/commits/).
+  """
+
   @doc """
   Get a single commit
 

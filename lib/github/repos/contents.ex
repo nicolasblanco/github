@@ -5,6 +5,10 @@ defmodule Github.Repos.Contents do
     ref: "master"
   }
 
+  @moduledoc """
+    Repositories [Contents](https://developer.github.com/v3/repos/contents/).
+  """
+
   @doc """
   Get the contents of a file or directory in a repository
 
