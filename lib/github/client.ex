@@ -5,6 +5,9 @@ defmodule Github.Client do
 
   @link_url_regex ~r/<(?<url>[^>]+)/
   @link_page_regex ~r/\bpage=(?<page>\d+)/
+  @generate_jwt_token_default_options %{
+    expire_in_minutes: 10,
+  }
 
   defstruct [:access_token, :jwt_token]
 
@@ -109,6 +112,30 @@ defmodule Github.Client do
   """
   def fetch_all!(github_response) do
     fetch_all!(github_response, []) |> Enum.reverse
+  end
+
+  @doc """
+  Generate GitHub [JWT token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#jwt-payload) with App ID and private key
+
+  ## Example
+
+      iex> Github.Client.generate_jwt_token(id: 12345, private_key_filepath: "app.pem", expire_in_minutes: 10)
+      "eyJhbGciOiJSU..."
+  """
+  def generate_jwt_token(options \\ []) do
+    opts = Enum.into(options, @generate_jwt_token_default_options)
+
+    key = JOSE.JWK.from_pem_file(opts.private_key_filepath)
+    timestamp = DateTime.to_unix(DateTime.utc_now)
+
+    %{
+      iat: timestamp,
+      exp: timestamp + (opts.expire_in_minutes * 60),
+      iss: opts.app_id
+    }
+    |> Joken.token
+    |> Joken.sign(Joken.rs256(key))
+    |> Joken.get_compact
   end
 
   defp fetch_all!(github_response, acc) do

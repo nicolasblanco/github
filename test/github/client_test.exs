@@ -54,4 +54,11 @@ defmodule Github.ClientTest do
       assert length(response2.body["repositories"]) == 27
     end
   end
+
+  test "Github.Client.generate_jwt_token returns a JWT token" do
+    result = Github.Client.generate_jwt_token(app_id: 12345, private_key_filepath: "test/fixtures/app.pem")
+
+    assert String.starts_with?(result, "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.")
+    assert String.length(result) == 443
+  end
 end

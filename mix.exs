@@ -30,6 +30,7 @@ defmodule Github.MixProject do
     [
       {:httpoison, "~> 0.11"},
       {:poison, "~> 3.1"},
+      {:joken, "~> 1.5"},
 
       {:ex_doc, "~> 0.18.0", only: :dev},
 
