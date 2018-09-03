@@ -8,9 +8,15 @@ one of the following labels: `Added`, `Changed`, `Deprecated`,
 to manage the versions of this gem so
 that you can set version constraints properly.
 
-#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.8.0...HEAD)
+#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.9.0...HEAD)
 
 * WIP
+
+#### [v0.9.0](https://github.com/WorkflowCI/github/compare/v0.8.0...v0.9.0) – 2018-09-02
+
+* `Added`: [Github.Pulls](https://hexdocs.pm/github/Github.Pulls.html).
+* `Added`: [Github.Apps.Installations.find!](https://hexdocs.pm/github/Github.Apps.Installations.html#find!/2).
+* `Added`: [Github.Client.generate_jwt_token](https://hexdocs.pm/github/Github.Client.html#generate_jwt_token/1).
 
 #### [v0.8.0](https://github.com/WorkflowCI/github/compare/v0.7.0...v0.8.0) – 2018-09-02
 
