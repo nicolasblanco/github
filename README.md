@@ -73,7 +73,7 @@ Please visit [hexdocs.pm/github](https://hexdocs.pm/github/api-reference.html) t
 
 ## API Resources
 
-* Apps
+* [Apps](https://hexdocs.pm/github/Github.Apps.html)
   * [Installations](https://hexdocs.pm/github/Github.Apps.Installations.html)
 * Git
   * [References](https://hexdocs.pm/github/Github.Git.Refs.html)
