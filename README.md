@@ -9,6 +9,8 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 ## Contents
 
 * [Usage](#usage)
+  * [With OAuth access token](#with-oauth-access-token)
+  * [With App JWT token](#with-app-jwt-token)
   * [Pagination](#pagination)
 * [API Resouces](#api-resources)
 * [Installation](#installation)
@@ -16,23 +18,37 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 
 ## Usage
 
+### With OAuth access token
+
 `Github` library supports multiple [API Resources](#api-resources).
 For example, [Github.Users.Emails.list!](https://hexdocs.pm/github/Github.Users.Emails.html#list!/2) allows getting user's emails:
 
 ```elixir
-iex> client = %Github.Client{access_token: "access_token"}
+iex> github_client = %Github.Client{access_token: "access_token"}
 
-iex> client |> Github.Users.Emails.list!()
+iex> github_client |> Github.Users.Emails.list!()
 %Github.Client.Response{
   status: 200,
-  headers: [
-    {"Server", "GitHub.com"},
-    ...
-  ],
-  body: [
-    %{"email" => "hello@workflowci.com", "primary" => true, "verified" => true, "visibility" => "public"},
-    ...
-  ],
+  headers: [{"Server", "GitHub.com"}, ...],
+  body: [%{"email" => "hello@workflowci.com", "primary" => true, "verified" => true, "visibility" => "public"}, ...],
+  ...
+}
+```
+
+### With App JWT token
+
+To authenticate with a GitHub App and make an API call by using a [JWT token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/):
+
+```elixir
+iex> jwt_token = Github.Client.generate_jwt_token(app_id: 12345, private_key_filepath: "app.pem")
+
+iex> github_client = %Github.Client{jwt_token: "jwt_token"}
+
+iex> github_client |> Github.Apps.Installations.find!(67890)
+%Github.Client.Response{
+  status: 200,
+  headers: [...],
+  body: %{"id" => 12345, ...},
   ...
 }
 ```
@@ -42,9 +58,9 @@ iex> client |> Github.Users.Emails.list!()
 For pagination, the client has such functions as [Github.Client.fetch_more!](https://hexdocs.pm/github/Github.Client.html#fetch_more!/1) and [Github.Client.fetch_all!](https://hexdocs.pm/github/Github.Client.html#fetch_all!/1). Here is an example:
 
 ```elixir
-iex> client = %Github.Client{access_token: "access_token"}
+iex> github_client = %Github.Client{access_token: "access_token"}
 
-iex> first_page = client |> Github.Users.Emails.list!(page: 1, per_page: 1)
+iex> first_page = github_client |> Github.Users.Emails.list!(page: 1, per_page: 1)
 %Github.Client.Response{
   status: 200,
   headers: [...],
