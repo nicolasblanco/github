@@ -99,7 +99,7 @@ Please visit [hexdocs.pm/github](https://hexdocs.pm/github/api-reference.html) t
   * [Contents](https://hexdocs.pm/github/Github.Repos.Contents.html)
   * [Statuses](https://hexdocs.pm/github/Github.Repos.Statuses.html)
 * [Pull Requests](https://hexdocs.pm/github/Github.Pulls.html)
-* Users
+* [Users](https://hexdocs.pm/github/Github.Users.html)
   * [Emails](https://hexdocs.pm/github/Github.Users.Emails.html)
 
 ## Installation

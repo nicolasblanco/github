@@ -1,0 +1,48 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/user"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"login\":\"WorkflowCI\",\"id\":39145743,\"node_id\":\"MDQ6VXNlcjM5MTQ1NzQz\",\"avatar_url\":\"https://avatars3.githubusercontent.com/u/39145743?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/WorkflowCI\",\"html_url\":\"https://github.com/WorkflowCI\",\"followers_url\":\"https://api.github.com/users/WorkflowCI/followers\",\"following_url\":\"https://api.github.com/users/WorkflowCI/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/WorkflowCI/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/WorkflowCI/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/WorkflowCI/subscriptions\",\"organizations_url\":\"https://api.github.com/users/WorkflowCI/orgs\",\"repos_url\":\"https://api.github.com/users/WorkflowCI/repos\",\"events_url\":\"https://api.github.com/users/WorkflowCI/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/WorkflowCI/received_events\",\"type\":\"User\",\"site_admin\":false,\"name\":null,\"company\":null,\"blog\":\"\",\"location\":null,\"email\":null,\"hireable\":null,\"bio\":null,\"public_repos\":1,\"public_gists\":0,\"followers\":0,\"following\":0,\"created_at\":\"2018-05-10T03:26:16Z\",\"updated_at\":\"2018-08-09T19:30:07Z\"}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Sat, 08 Sep 2018 01:28:26 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1147",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4996",
+        "X-RateLimit-Reset": "1536373477",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"eaaff9121fd04c708dc2522ee22f2d13\"",
+        "Last-Modified": "Thu, 09 Aug 2018 19:30:07 GMT",
+        "X-OAuth-Scopes": "read:org, user:email",
+        "X-Accepted-OAuth-Scopes": "",
+        "X-OAuth-Client-Id": "2353ce313dbf097bc20a",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-Runtime-rack": "0.033634",
+        "X-GitHub-Request-Id": "EB9B:3379:FD0F9:2715E3:5B9325BA"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
