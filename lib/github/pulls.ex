@@ -25,7 +25,7 @@ defmodule Github.Pulls do
         ...
       }
   """
-  def list!(github_client, options \\ []) do
+  def list!(github_client, options) do
     opts = Enum.into(options, @list_default_options)
 
     get!(

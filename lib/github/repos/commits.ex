@@ -22,7 +22,7 @@ defmodule Github.Repos.Commits do
         ...
       }
   """
-  def find!(github_client, options \\ []) do
+  def find!(github_client, options) do
     opts = Enum.into(options, %{})
 
     get!(

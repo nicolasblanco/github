@@ -30,7 +30,7 @@ defmodule Github.Repos.Statuses do
         ...
       }
   """
-  def create!(github_client, options \\ []) do
+  def create!(github_client, options) do
     opts = Enum.into(options, @create_default_options)
     url = "https://api.github.com/repos/#{opts.repo_path}/statuses/#{opts.sha}"
     body = to_json!(%{
