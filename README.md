@@ -9,31 +9,14 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
 ## Contents
 
 * [Usage](#usage)
-  * [With OAuth access token](#with-oauth-access-token)
   * [With App JWT token](#with-app-jwt-token)
+  * [With OAuth access token](#with-oauth-access-token)
   * [Pagination](#pagination)
 * [API Resouces](#api-resources)
 * [Installation](#installation)
 * [Testing](#testing)
 
 ## Usage
-
-### With OAuth access token
-
-`Github` library supports multiple [API Resources](#api-resources).
-For example, [Github.Users.Emails.list!](https://hexdocs.pm/github/Github.Users.Emails.html#list!/2) allows getting user's emails:
-
-```elixir
-iex> github_client = %Github.Client{access_token: "access_token"}
-
-iex> github_client |> Github.Users.Emails.list!()
-%Github.Client.Response{
-  status: 200,
-  headers: [{"Server", "GitHub.com"}, ...],
-  body: [%{"email" => "hello@workflowci.com", "primary" => true, "verified" => true, "visibility" => "public"}, ...],
-  ...
-}
-```
 
 ### With App JWT token
 
@@ -51,6 +34,37 @@ iex> github_client |> Github.Apps.Installations.find!(67890)
   body: %{"id" => 12345, ...},
   ...
 }
+```
+
+### With OAuth access token
+
+To get an access token, redirect a user to an authorize url:
+
+```elixir
+def github(conn, _params) do
+  authorize_url = Github.Oauth2.Client.authorize_url!(
+    config: [client_id: "client_id", client_secret: "client_secret"],
+    scope: "user:email"
+  )
+  conn |> redirect(external: authorize_url)
+end
+```
+
+If a user authorized a log in then GitHub will hit an application callback endpoint with a `code`:
+
+```elixir
+def github_callback(conn, %{"code" => code}) do
+  access_token = Github.Oauth2.Client.access_token!(
+    config: [client_id: "client_id", client_secret: "client_secret"],
+    params: [code: code]
+  )
+
+  github_client = %Github.Client{access_token: access_token}
+
+  %{"login" => login} = github_client |> Github.Users.find!() |> Map.fetch!(:body)
+  [%{"email" => email} | _] = github_client |> Github.Users.Emails.list!() |> Map.fetch!(:body)
+  ...
+end
 ```
 
 ### Pagination

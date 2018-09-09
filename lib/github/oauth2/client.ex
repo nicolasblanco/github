@@ -21,8 +21,7 @@ defmodule Github.Oauth2.Client do
         config: [client_id: "client_id", client_secret: "client_secret"],
         scope: "user:email"
       )
-
-      iex> conn |> redirect(external: authorize_url)
+      "https://github.com/login/oauth/authorize?client_id=client_id&redirect_uri=&response_type=code&scope=user%3Aemail"
   """
   def authorize_url!(options) do
     opts = Enum.into(options, %{})
@@ -34,14 +33,15 @@ defmodule Github.Oauth2.Client do
 
   ## Example
 
-      iex> Github.Oauth2.Client.find_access_token!(
+      iex> Github.Oauth2.Client.access_token!(
         config: [client_id: "client_id", client_secret: "client_secret"],
-        params: %{code: code}
+        params: [code: code]
       )
+      "accessToken"
   """
-  def find_access_token!(options) do
+  def access_token!(options) do
     opts = Enum.into(options, %{})
-    OAuth2.Client.get_token!(client(opts.config), opts.params).access_token
+    OAuth2.Client.get_token!(client(opts.config), opts.params).token.access_token
   end
 
   # Strategy Callbacks

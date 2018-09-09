@@ -1,0 +1,42 @@
+[
+  {
+    "request": {
+      "body": "client_id=client_id&client_secret=client_secret&code=code&grant_type=authorization_code&redirect_uri=",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "accept": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://github.com/login/oauth/access_token"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"access_token\":\"v1.e4f498f111eb59dbcb1bf7148f4dc8c94e7d3372\"}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Tue, 04 Sep 2018 03:46:29 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "91",
+        "Status": "201 Created",
+        "Cache-Control": "public, max-age=60, s-maxage=60",
+        "Vary": "Accept",
+        "ETag": "\"8918e548e91e57ad02adc97faaa62b3b\"",
+        "X-GitHub-Media-Type": "github.machine-man-preview; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-Runtime-rack": "0.031795",
+        "X-GitHub-Request-Id": "E156:35BC:833232:1611CDC:5B8E0015"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
