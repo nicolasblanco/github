@@ -123,7 +123,7 @@ The package can be installed by adding `github` to your list of dependencies in 
 ```elixir
 def deps do
   [
-    {:github, "~> 0.10.0"}
+    {:github, "~> 0.11.0"}
   ]
 end
 ```

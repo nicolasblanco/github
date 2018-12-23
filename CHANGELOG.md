@@ -8,9 +8,14 @@ one of the following labels: `Added`, `Changed`, `Deprecated`,
 to manage the versions of this gem so
 that you can set version constraints properly.
 
-#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.10.0...HEAD)
+#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.11.0...HEAD)
 
 * WIP
+
+#### [v0.11.0](https://github.com/WorkflowCI/github/compare/v0.10.0...v0.11.0) – 2018-12-22
+
+* `Added`: [Github.Oauth2.Client](https://hexdocs.pm/github/Github.Oauth2.Client.html).
+* `Added`: [Github.Users](https://hexdocs.pm/github/Github.Users.html).
 
 #### [v0.10.0](https://github.com/WorkflowCI/github/compare/v0.9.0...v0.10.0) – 2018-09-04
 
