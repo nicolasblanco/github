@@ -14,7 +14,7 @@ defmodule Github.MixProject do
       package: package(),
       docs: docs_config(),
       source_url: "https://github.com/WorkflowCI/github",
-      test_coverage: [tool: ExCoveralls],
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -32,11 +32,10 @@ defmodule Github.MixProject do
       {:poison, "~> 3.1"},
       {:joken, "~> 1.5"},
       {:oauth2, "~> 0.9"},
-
-      {:ex_doc, "~> 0.18.0", only: :dev},
-
+      {:ex_doc, "~> 0.19", only: :dev},
       {:exvcr, "~> 0.10", only: :test},
       {:excoveralls, "~> 0.10", only: :test},
+      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false}
     ]
   end
 

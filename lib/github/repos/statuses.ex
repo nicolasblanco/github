@@ -33,15 +33,18 @@ defmodule Github.Repos.Statuses do
   def create!(github_client, options) do
     opts = Enum.into(options, @create_default_options)
     url = "https://api.github.com/repos/#{opts.repo_path}/statuses/#{opts.sha}"
-    body = to_json!(%{
-      state: opts.state,
-      target_url: opts.target_url,
-      description: opts.description,
-      context: opts.context
-    })
+
+    body =
+      to_json!(%{
+        state: opts.state,
+        target_url: opts.target_url,
+        description: opts.description,
+        context: opts.context
+      })
+
     headers = [
       {"Authorization", "token #{github_client.access_token}"},
-      {"Accept", "application/vnd.github.howard-the-duck-preview+json"},
+      {"Accept", "application/vnd.github.howard-the-duck-preview+json"}
     ]
 
     post!(url, body, headers)

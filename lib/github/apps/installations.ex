@@ -26,8 +26,11 @@ defmodule Github.Apps.Installations do
   """
   def list_repos!(github_client, options \\ []) do
     opts = Enum.into(options, @list_repos_default_options)
+
     get!(
-      "https://api.github.com/installation/repositories?per_page=#{opts.per_page}&page=#{opts.page}",
+      "https://api.github.com/installation/repositories?per_page=#{opts.per_page}&page=#{
+        opts.page
+      }",
       [
         {"Authorization", "token #{github_client.access_token}"},
         {"Accept", "application/vnd.github.machine-man-preview+json"}

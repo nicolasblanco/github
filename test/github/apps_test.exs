@@ -5,7 +5,8 @@ defmodule Github.AppsTest do
   describe "create_access_token!/2" do
     test "returns an organization" do
       use_cassette "apps.create_access_token!" do
-        response = %Github.Client{jwt_token: "jwt_token"} |> Github.Apps.create_access_token!(241102)
+        response =
+          %Github.Client{jwt_token: "jwt_token"} |> Github.Apps.create_access_token!(241_102)
 
         assert response.status == 201
         assert response.body["token"] == "v1.e4f498f111eb59dbcb1bf7148f4dc8c94e7d3372"

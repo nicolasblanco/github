@@ -6,7 +6,7 @@ defmodule Github.Client do
   @link_url_regex ~r/<(?<url>[^>]+)/
   @link_page_regex ~r/\bpage=(?<page>\d+)/
   @generate_jwt_token_default_options %{
-    expire_in_minutes: 10,
+    expire_in_minutes: 10
   }
 
   defstruct [:access_token, :jwt_token]
@@ -45,7 +45,7 @@ defmodule Github.Client do
       next_url: link_url(next_link_header),
       last_url: link_url(last_link_header),
       next_page: link_page(next_link_header),
-      last_page: link_page(last_link_header),
+      last_page: link_page(last_link_header)
     }
   end
 
@@ -111,7 +111,7 @@ defmodule Github.Client do
   To reduce number of HTTP requests it is recommended to specify the largest `per_page` value `100` in the first request.
   """
   def fetch_all!(github_response) do
-    fetch_all!(github_response, []) |> Enum.reverse
+    github_response |> fetch_all!([]) |> Enum.reverse()
   end
 
   @doc """
@@ -126,16 +126,16 @@ defmodule Github.Client do
     opts = Enum.into(options, @generate_jwt_token_default_options)
 
     key = JOSE.JWK.from_pem_file(opts.private_key_filepath)
-    timestamp = DateTime.to_unix(DateTime.utc_now)
+    timestamp = DateTime.to_unix(DateTime.utc_now())
 
     %{
       iat: timestamp,
-      exp: timestamp + (opts.expire_in_minutes * 60),
+      exp: timestamp + opts.expire_in_minutes * 60,
       iss: opts.app_id
     }
-    |> Joken.token
+    |> Joken.token()
     |> Joken.sign(Joken.rs256(key))
-    |> Joken.get_compact
+    |> Joken.get_compact()
   end
 
   defp fetch_all!(github_response, acc) do
@@ -148,36 +148,37 @@ defmodule Github.Client do
   end
 
   defp next_link_header(response) do
-    link_header = Enum.find(response.headers, fn({header, _value}) -> header == "Link" end)
+    link_header = Enum.find(response.headers, fn {header, _value} -> header == "Link" end)
 
     case link_header do
       nil ->
         nil
+
       {_, link_value} ->
-        link_value |> String.split(", ") |> Enum.find(fn(link) -> link =~ "rel=\"next\"" end)
+        link_value |> String.split(", ") |> Enum.find(fn link -> link =~ "rel=\"next\"" end)
     end
   end
 
   defp last_link_header(response) do
-    link_header = Enum.find(response.headers, fn({header, _value}) -> header == "Link" end)
+    link_header = Enum.find(response.headers, fn {header, _value} -> header == "Link" end)
 
     case link_header do
       nil -> nil
-      {_, link_value} -> link_value |> String.split(", ") |> Enum.find(& &1 =~ "rel=\"last\"")
+      {_, link_value} -> link_value |> String.split(", ") |> Enum.find(&(&1 =~ "rel=\"last\""))
     end
   end
 
   defp link_url(link_header) do
     case link_header do
       nil -> nil
-      _ -> Regex.named_captures(@link_url_regex, link_header) |> Map.get("url")
+      _ -> @link_url_regex |> Regex.named_captures(link_header) |> Map.get("url")
     end
   end
 
   defp link_page(link_header) do
     case link_header do
       nil -> nil
-      _ -> Regex.named_captures(@link_page_regex, link_header) |> Map.get("page")
+      _ -> @link_page_regex |> Regex.named_captures(link_header) |> Map.get("page")
     end
   end
 end

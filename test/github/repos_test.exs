@@ -5,7 +5,8 @@ defmodule Github.ReposTest do
   describe "find!/2" do
     test "returns a repository" do
       use_cassette "repos.find!" do
-        response = %Github.Client{access_token: "access_token"} |> Github.Repos.find!("WorkflowCI/github")
+        response =
+          %Github.Client{access_token: "access_token"} |> Github.Repos.find!("WorkflowCI/github")
 
         assert response.status == 200
         assert response.body["name"] == "github"

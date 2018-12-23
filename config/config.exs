@@ -2,13 +2,12 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :exvcr, [
+config :exvcr,
   vcr_cassette_library_dir: "test/vcr_cassettes",
   filter_sensitive_data: [],
   filter_url_params: false,
   filter_request_headers: ["Authorization"],
   response_headers_blacklist: []
-]
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this

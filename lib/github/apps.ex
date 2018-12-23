@@ -25,7 +25,7 @@ defmodule Github.Apps do
       "",
       [
         {"Authorization", "Bearer #{github_client.jwt_token}"},
-        {"Accept", "application/vnd.github.machine-man-preview+json"},
+        {"Accept", "application/vnd.github.machine-man-preview+json"}
       ]
     )
   end

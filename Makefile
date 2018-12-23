@@ -21,5 +21,8 @@ publish:
 	git push --tags && \
 	mix hex.publish
 
-test:
+format:
+	mix format && mix credo
+
+test: format
 	iex -S mix test --trace

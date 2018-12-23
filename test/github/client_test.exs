@@ -10,8 +10,12 @@ defmodule Github.ClientTest do
       assert length(response.body["repositories"]) == 1
       assert response.next_page == "2"
       assert response.last_page == "77"
-      assert response.next_url == "https://api.github.com/installation/repositories?per_page=1&page=2"
-      assert response.last_url == "https://api.github.com/installation/repositories?per_page=1&page=77"
+
+      assert response.next_url ==
+               "https://api.github.com/installation/repositories?per_page=1&page=2"
+
+      assert response.last_url ==
+               "https://api.github.com/installation/repositories?per_page=1&page=77"
     end
   end
 
@@ -19,6 +23,7 @@ defmodule Github.ClientTest do
     test "returns more results" do
       table = :ets.new(:test, [:set])
       client = %Github.Client{access_token: "access_token"}
+
       use_cassette "client#pagination_1" do
         :ets.insert(
           table,
@@ -40,6 +45,7 @@ defmodule Github.ClientTest do
     test "returns the rest of the results" do
       table = :ets.new(:test, [:set])
       client = %Github.Client{access_token: "access_token"}
+
       use_cassette "client#pagination_50" do
         :ets.insert(
           table,
@@ -61,7 +67,11 @@ defmodule Github.ClientTest do
 
   describe "generate_jwt_token/1" do
     test "returns a JWT token" do
-      result = Github.Client.generate_jwt_token(app_id: 12345, private_key_filepath: "test/fixtures/app.pem")
+      result =
+        Github.Client.generate_jwt_token(
+          app_id: 12_345,
+          private_key_filepath: "test/fixtures/app.pem"
+        )
 
       assert String.starts_with?(result, "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.")
       assert String.length(result) == 443

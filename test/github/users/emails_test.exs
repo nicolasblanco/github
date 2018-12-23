@@ -8,10 +8,21 @@ defmodule Github.Users.EmailsTest do
         response = %Github.Client{access_token: "access_token"} |> Github.Users.Emails.list!()
 
         assert response.status == 200
+
         assert response.body == [
-          %{"email" => "email1@example.com", "primary" => true, "verified" => true, "visibility" => "private"},
-          %{"email" => "email2@example.com", "primary" => false, "verified" => true, "visibility" => nil}
-        ]
+                 %{
+                   "email" => "email1@example.com",
+                   "primary" => true,
+                   "verified" => true,
+                   "visibility" => "private"
+                 },
+                 %{
+                   "email" => "email2@example.com",
+                   "primary" => false,
+                   "verified" => true,
+                   "visibility" => nil
+                 }
+               ]
       end
     end
   end

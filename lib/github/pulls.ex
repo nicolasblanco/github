@@ -29,7 +29,9 @@ defmodule Github.Pulls do
     opts = Enum.into(options, @list_default_options)
 
     get!(
-      "https://api.github.com/repos/#{opts.repo_path}/pulls?state=#{opts.state}&per_page=#{opts.per_page}&page=#{opts.page}",
+      "https://api.github.com/repos/#{opts.repo_path}/pulls?state=#{opts.state}&per_page=#{
+        opts.per_page
+      }&page=#{opts.page}",
       [{"Authorization", "token #{github_client.access_token}"}]
     )
   end
