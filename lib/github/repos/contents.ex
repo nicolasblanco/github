@@ -27,7 +27,7 @@ defmodule Github.Repos.Contents do
         ...
       }
   """
-  def find!(github_client, options \\ []) do
+  def find!(github_client, options) do
     opts = Enum.into(options, @find_default_options)
 
     get!(

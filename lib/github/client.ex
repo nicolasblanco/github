@@ -122,7 +122,7 @@ defmodule Github.Client do
       iex> Github.Client.generate_jwt_token(id: 12345, private_key_filepath: "app.pem", expire_in_minutes: 10)
       "eyJhbGciOiJSU..."
   """
-  def generate_jwt_token(options \\ []) do
+  def generate_jwt_token(options) do
     opts = Enum.into(options, @generate_jwt_token_default_options)
 
     key = JOSE.JWK.from_pem_file(opts.private_key_filepath)
