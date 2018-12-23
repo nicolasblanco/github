@@ -124,7 +124,7 @@ The package can be installed by adding `github` to your list of dependencies in 
 ```elixir
 def deps do
   [
-    {:github, "~> 0.11.0"}
+    {:github, "~> 0.12.0-rc1"}
   ]
 end
 ```
