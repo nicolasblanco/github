@@ -9,6 +9,9 @@ config :exvcr,
   filter_request_headers: ["Authorization"],
   response_headers_blacklist: []
 
+config :oauth2,
+  serializers: %{"application/json" => Application.get_env(Github.Client, :json_library) || Jason}
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,

@@ -12,11 +12,11 @@ defmodule Github.Client do
   defstruct [:access_token, :jwt_token]
 
   def to_json!(map) do
-    Poison.encode!(map)
+    json_library().encode!(map)
   end
 
   def from_json!(map) do
-    Poison.decode!(map)
+    json_library().decode!(map)
   end
 
   def post!(url, body, headers) do
@@ -124,18 +124,19 @@ defmodule Github.Client do
   """
   def generate_jwt_token(options) do
     opts = Enum.into(options, @generate_jwt_token_default_options)
-
-    key = JOSE.JWK.from_pem_file(opts.private_key_filepath)
-    timestamp = DateTime.to_unix(DateTime.utc_now())
+    pem = File.read!(opts.private_key_filepath)
+    signer = Joken.Signer.create("RS256", %{"pem" => pem})
 
     %{
-      iat: timestamp,
-      exp: timestamp + opts.expire_in_minutes * 60,
-      iss: opts.app_id
+      default_exp: opts.expire_in_minutes * 60,
+      iss: opts.app_id |> Integer.to_string()
     }
-    |> Joken.token()
-    |> Joken.sign(Joken.rs256(key))
-    |> Joken.get_compact()
+    |> Joken.Config.default_claims()
+    |> Joken.generate_and_sign!(nil, signer)
+  end
+
+  defp json_library do
+    Application.get_env(Github.Client, :json_library) || Jason
   end
 
   defp fetch_all!(github_response, acc) do

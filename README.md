@@ -14,6 +14,7 @@ The simplest Elixir client for GitHub [REST API v3](https://developer.github.com
   * [Pagination](#pagination)
 * [API Resouces](#api-resources)
 * [Installation](#installation)
+* [Configuration](#configuration)
 * [Testing](#testing)
 
 ## Usage
@@ -126,6 +127,14 @@ def deps do
     {:github, "~> 0.11.0"}
   ]
 end
+```
+
+## Configuration
+
+It uses `jason` as a default JSON library. Change the config to use any other JSON library, for example:
+
+```elixir
+config Github.Client, json_library: Poison
 ```
 
 ## Testing

@@ -74,7 +74,7 @@ defmodule Github.ClientTest do
         )
 
       assert String.starts_with?(result, "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.")
-      assert String.length(result) == 443
+      assert String.length(result) == 531
     end
   end
 end

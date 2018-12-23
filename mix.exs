@@ -29,8 +29,8 @@ defmodule Github.MixProject do
   defp deps do
     [
       {:httpoison, "~> 0.11"},
-      {:poison, "~> 3.1"},
-      {:joken, "~> 1.5"},
+      {:jason, "~> 1.1", optional: true},
+      {:joken, "~> 2.0.0-rc3"},
       {:oauth2, "~> 0.9"},
       {:ex_doc, "~> 0.19", only: :dev},
       {:exvcr, "~> 0.10", only: :test},
