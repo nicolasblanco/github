@@ -15,50 +15,56 @@ defmodule Github.ClientTest do
     end
   end
 
-  test "Github.Client.fetch_more! returns more results" do
-    table = :ets.new(:test, [:set])
-    client = %Github.Client{access_token: "access_token"}
-    use_cassette "client#pagination_1" do
-      :ets.insert(
-        table,
-        {"response1", Github.Apps.Installations.list_repos!(client, per_page: 1)}
-      )
-    end
+  describe "fetch_more!/1" do
+    test "returns more results" do
+      table = :ets.new(:test, [:set])
+      client = %Github.Client{access_token: "access_token"}
+      use_cassette "client#pagination_1" do
+        :ets.insert(
+          table,
+          {"response1", Github.Apps.Installations.list_repos!(client, per_page: 1)}
+        )
+      end
 
-    use_cassette "client.fetch_more!" do
-      [{"response1", response1}] = :ets.lookup(table, "response1")
-      response2 = Github.Client.fetch_more!(response1)
+      use_cassette "client.fetch_more!" do
+        [{"response1", response1}] = :ets.lookup(table, "response1")
+        response2 = Github.Client.fetch_more!(response1)
 
-      assert response2.status == 200
-      assert length(response2.body["repositories"]) == 1
-    end
-  end
-
-  test "Github.Client.fetch_all! returns the rest of the results" do
-    table = :ets.new(:test, [:set])
-    client = %Github.Client{access_token: "access_token"}
-    use_cassette "client#pagination_50" do
-      :ets.insert(
-        table,
-        {"response1", Github.Apps.Installations.list_repos!(client, per_page: 50)}
-      )
-    end
-
-    use_cassette "client.fetch_all!" do
-      [{"response1", response1}] = :ets.lookup(table, "response1")
-      responses = Github.Client.fetch_all!(response1)
-
-      assert length(responses) == 1
-      [response2] = responses
-      assert response2.status == 200
-      assert length(response2.body["repositories"]) == 27
+        assert response2.status == 200
+        assert length(response2.body["repositories"]) == 1
+      end
     end
   end
 
-  test "Github.Client.generate_jwt_token returns a JWT token" do
-    result = Github.Client.generate_jwt_token(app_id: 12345, private_key_filepath: "test/fixtures/app.pem")
+  describe "fetch_all!/1" do
+    test "returns the rest of the results" do
+      table = :ets.new(:test, [:set])
+      client = %Github.Client{access_token: "access_token"}
+      use_cassette "client#pagination_50" do
+        :ets.insert(
+          table,
+          {"response1", Github.Apps.Installations.list_repos!(client, per_page: 50)}
+        )
+      end
 
-    assert String.starts_with?(result, "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.")
-    assert String.length(result) == 443
+      use_cassette "client.fetch_all!" do
+        [{"response1", response1}] = :ets.lookup(table, "response1")
+        responses = Github.Client.fetch_all!(response1)
+
+        assert length(responses) == 1
+        [response2] = responses
+        assert response2.status == 200
+        assert length(response2.body["repositories"]) == 27
+      end
+    end
+  end
+
+  describe "generate_jwt_token/1" do
+    test "returns a JWT token" do
+      result = Github.Client.generate_jwt_token(app_id: 12345, private_key_filepath: "test/fixtures/app.pem")
+
+      assert String.starts_with?(result, "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.")
+      assert String.length(result) == 443
+    end
   end
 end
