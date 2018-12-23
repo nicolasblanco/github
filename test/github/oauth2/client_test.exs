@@ -1,5 +1,5 @@
 defmodule Github.Oauth2.ClientTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "authorize_url!/1" do

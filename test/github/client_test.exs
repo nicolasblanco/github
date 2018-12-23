@@ -1,5 +1,5 @@
 defmodule Github.ClientTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   test "returns pagination info" do

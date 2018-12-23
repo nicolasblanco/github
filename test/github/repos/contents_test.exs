@@ -1,5 +1,5 @@
 defmodule Github.Repos.ContentsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "find!/2" do

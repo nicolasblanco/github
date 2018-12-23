@@ -1,5 +1,5 @@
 defmodule Github.OrgsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "user_list!/2" do

@@ -1,5 +1,5 @@
 defmodule Github.Repos.StatusesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "create!/2" do

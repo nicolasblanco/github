@@ -1,5 +1,5 @@
 defmodule Github.Users.EmailsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "list!/2" do

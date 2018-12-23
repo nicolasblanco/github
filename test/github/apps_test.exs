@@ -1,5 +1,5 @@
 defmodule Github.AppsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "create_access_token!/2" do
