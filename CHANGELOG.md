@@ -8,9 +8,16 @@ one of the following labels: `Added`, `Changed`, `Deprecated`,
 to manage the versions of this gem so
 that you can set version constraints properly.
 
-#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.12.0-rc1...HEAD)
+#### [Unreleased](https://github.com/WorkflowCI/github/compare/v0.13.0-rc1...HEAD)
 
 * WIP
+
+#### [v0.13.0-rc1](https://github.com/WorkflowCI/github/compare/v0.13.0-rc1...v0.12.0-rc1) – 2018-12-24
+
+* `Added`: [Github.Search.Issues](https://hexdocs.pm/github/Github.Search.Issues.html).
+* `Added`: [Github.Issues](https://hexdocs.pm/github/Github.Issues.html).
+* `Added`: [Github.Issues.Comments](https://hexdocs.pm/github/Github.Issues.Comments.html).
+* `Added`: [Github.Issues.Labels](https://hexdocs.pm/github/Github.Issues.Labels.html).
 
 #### [v0.12.0-rc1](https://github.com/WorkflowCI/github/compare/v0.12.0-rc1...v0.11.0) – 2018-12-22
 

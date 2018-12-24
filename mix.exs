@@ -1,7 +1,7 @@
 defmodule Github.MixProject do
   use Mix.Project
 
-  @version "0.12.0-rc1"
+  @version "0.13.0-rc1"
 
   def project do
     [
