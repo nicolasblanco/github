@@ -3,7 +3,7 @@ defmodule Github.Issues.CommentsTest do
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   describe "create!/2" do
-    test "create a new comment" do
+    test "creates a new comment" do
       use_cassette "issues/comments.create!" do
         response =
           %Github.Client{access_token: "access_token"}
