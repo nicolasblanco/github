@@ -108,12 +108,17 @@ Please visit [hexdocs.pm/github](https://hexdocs.pm/github/api-reference.html) t
   * [Installations](https://hexdocs.pm/github/Github.Apps.Installations.html)
 * Git
   * [References](https://hexdocs.pm/github/Github.Git.Refs.html)
+* [Issues](https://hexdocs.pm/github/Github.Issues.html)
+  * [Comments](https://hexdocs.pm/github/Github.Issues.Comments.html)
+  * [Labels](https://hexdocs.pm/github/Github.Issues.Labels.html)
 * [Organizations](https://hexdocs.pm/github/Github.Orgs.html)
+* [Pull Requests](https://hexdocs.pm/github/Github.Pulls.html)
 * [Repositories](https://hexdocs.pm/github/Github.Repos.html)
   * [Commits](https://hexdocs.pm/github/Github.Repos.Commits.html)
   * [Contents](https://hexdocs.pm/github/Github.Repos.Contents.html)
   * [Statuses](https://hexdocs.pm/github/Github.Repos.Statuses.html)
-* [Pull Requests](https://hexdocs.pm/github/Github.Pulls.html)
+* Search
+  * [Issues](https://hexdocs.pm/github/Github.Search.Issues.html)
 * [Users](https://hexdocs.pm/github/Github.Users.html)
   * [Emails](https://hexdocs.pm/github/Github.Users.Emails.html)
 
