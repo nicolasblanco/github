@@ -1,0 +1,45 @@
+[
+  {
+    "request": {
+      "body": "{\"color\":\"FFA700\",\"description\":\"Inactive\",\"name\":\"stale\"}",
+      "headers": {
+        "Authorization": "***",
+        "Accept": "application/vnd.github.symmetra-preview+json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/WorkflowCI/github/labels"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":1170901805,\"node_id\":\"MDU6TGFiZWwxMTcwOTAxODA1\",\"url\":\"https://api.github.com/repos/WorkflowCI/github/labels/stale\",\"name\":\"stale\",\"color\":\"FFA700\",\"default\":false,\"description\":\"Inactive\"}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Mon, 24 Dec 2018 05:04:28 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "192",
+        "Status": "201 Created",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4996",
+        "X-RateLimit-Reset": "1545628130",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"937e795eb1c6442e04858b9352a84cb8\"",
+        "Location": "https://api.github.com/repos/WorkflowCI/github/labels/stale",
+        "X-GitHub-Media-Type": "github.symmetra-preview; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-GitHub-Request-Id": "E6A3:46D3:54AC776:AFB277C:5C2068DC"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
