@@ -40,7 +40,7 @@ defmodule Github.Issues.Labels do
       {"Accept", "application/vnd.github.symmetra-preview+json"}
     ]
 
-    post!(url, body, headers)
+    post!(url, headers, body)
   end
 
   @doc """
@@ -71,7 +71,7 @@ defmodule Github.Issues.Labels do
       {"Accept", "application/vnd.github.symmetra-preview+json"}
     ]
 
-    post!(url, body, headers)
+    post!(url, headers, body)
   end
 
   @doc """

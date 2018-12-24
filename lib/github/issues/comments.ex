@@ -30,6 +30,6 @@ defmodule Github.Issues.Comments do
     body = to_json!(%{body: opts.body})
     headers = [{"Authorization", "token #{github_client.access_token}"}]
 
-    post!(url, body, headers)
+    post!(url, headers, body)
   end
 end

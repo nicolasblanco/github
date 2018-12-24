@@ -1,0 +1,44 @@
+[
+  {
+    "request": {
+      "body": "{\"state\":\"closed\"}",
+      "headers": {
+        "Authorization": "***",
+        "Accept": "application/vnd.github.symmetra-preview+json"
+      },
+      "method": "patch",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/WorkflowCI/github/issues/1"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"url\":\"https://api.github.com/repos/WorkflowCI/github/issues/1\",\"repository_url\":\"https://api.github.com/repos/WorkflowCI/github\",\"labels_url\":\"https://api.github.com/repos/WorkflowCI/github/issues/1/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/WorkflowCI/github/issues/1/comments\",\"events_url\":\"https://api.github.com/repos/WorkflowCI/github/issues/1/events\",\"html_url\":\"https://github.com/WorkflowCI/github/pull/1\",\"id\":391344932,\"node_id\":\"MDExOlB1bGxSZXF1ZXN0MjM4ODkxMzk1\",\"number\":1,\"title\":\"2\",\"user\":{\"login\":\"WorkflowCI\",\"id\":45863716,\"node_id\":\"MDQ6VXNlcjQ1ODYzNzE2\",\"avatar_url\":\"https://avatars3.githubusercontent.com/u/45863716?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/WorkflowCI\",\"html_url\":\"https://github.com/WorkflowCI\",\"followers_url\":\"https://api.github.com/users/WorkflowCI/followers\",\"following_url\":\"https://api.github.com/users/WorkflowCI/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/WorkflowCI/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/WorkflowCI/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/WorkflowCI/subscriptions\",\"organizations_url\":\"https://api.github.com/users/WorkflowCI/orgs\",\"repos_url\":\"https://api.github.com/users/WorkflowCI/repos\",\"events_url\":\"https://api.github.com/users/WorkflowCI/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/WorkflowCI/received_events\",\"type\":\"User\",\"site_admin\":false},\"labels\":[{\"id\":1170901805,\"node_id\":\"MDU6TGFiZWwxMTcwOTAxODA1\",\"url\":\"https://api.github.com/repos/WorkflowCI/github/labels/stale\",\"name\":\"stale\",\"color\":\"FFA700\",\"default\":false,\"description\":\"Inactive\"}],\"state\":\"closed\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":1,\"created_at\":\"2018-12-15T05:01:16Z\",\"updated_at\":\"2018-12-24T20:01:45Z\",\"closed_at\":\"2018-12-24T20:01:45Z\",\"author_association\":\"OWNER\",\"pull_request\":{\"url\":\"https://api.github.com/repos/WorkflowCI/github/pulls/1\",\"html_url\":\"https://github.com/WorkflowCI/github/pull/1\",\"diff_url\":\"https://github.com/WorkflowCI/github/pull/1.diff\",\"patch_url\":\"https://github.com/WorkflowCI/github/pull/1.patch\"},\"body\":\"\",\"closed_by\":{\"login\":\"workflowci[bot]\",\"id\":39064729,\"node_id\":\"MDM6Qm90MzkwNjQ3Mjk=\",\"avatar_url\":\"https://avatars2.githubusercontent.com/in/11877?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/workflowci%5Bbot%5D\",\"html_url\":\"https://github.com/apps/workflowci\",\"followers_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/received_events\",\"type\":\"Bot\",\"site_admin\":false}}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Mon, 24 Dec 2018 20:01:46 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "3162",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4994",
+        "X-RateLimit-Reset": "1545683421",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"726a1121a59530c4f6b88c5460b17759\"",
+        "X-GitHub-Media-Type": "github.symmetra-preview; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-GitHub-Request-Id": "EE6A:46D1:2621C08:6139D4E:5C213B29"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

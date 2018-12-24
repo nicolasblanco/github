@@ -47,6 +47,6 @@ defmodule Github.Repos.Statuses do
       {"Accept", "application/vnd.github.howard-the-duck-preview+json"}
     ]
 
-    post!(url, body, headers)
+    post!(url, headers, body)
   end
 end

@@ -19,7 +19,7 @@ defmodule Github.Client do
     json_library().decode!(map)
   end
 
-  def post!(url, body, headers) do
+  def post!(url, headers, body \\ "") do
     request = %{url: url, body: body, headers: headers}
     response = HTTPoison.post!(url, body, headers)
 
@@ -52,6 +52,18 @@ defmodule Github.Client do
   def delete!(url, headers) do
     request = %{url: url, headers: headers}
     response = HTTPoison.delete!(url, headers)
+
+    %Github.Client.Response{
+      request: request,
+      body: from_json!(response.body),
+      headers: response.headers,
+      status: response.status_code
+    }
+  end
+
+  def patch!(url, headers, body) do
+    request = %{url: url, headers: headers, body: body}
+    response = HTTPoison.patch!(url, body, headers)
 
     %Github.Client.Response{
       request: request,
