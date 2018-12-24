@@ -1,0 +1,44 @@
+[
+  {
+    "request": {
+      "body": "{\"body\":\"hello world\"}",
+      "headers": {
+        "Authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/WorkflowCI/github/issues/1/comments"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"url\":\"https://api.github.com/repos/WorkflowCI/github/issues/comments/449685608\",\"html_url\":\"https://github.com/WorkflowCI/github/pull/1#issuecomment-449685608\",\"issue_url\":\"https://api.github.com/repos/WorkflowCI/github/issues/1\",\"id\":449685608,\"node_id\":\"MDEyOklzc3VlQ29tbWVudDQ0OTY4NTYwOA==\",\"user\":{\"login\":\"workflowci[bot]\",\"id\":39064729,\"node_id\":\"MDM6Qm90MzkwNjQ3Mjk=\",\"avatar_url\":\"https://avatars2.githubusercontent.com/in/11877?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/workflowci%5Bbot%5D\",\"html_url\":\"https://github.com/apps/workflowci\",\"followers_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/workflowci%5Bbot%5D/received_events\",\"type\":\"Bot\",\"site_admin\":false},\"created_at\":\"2018-12-24T04:44:36Z\",\"updated_at\":\"2018-12-24T04:44:36Z\",\"author_association\":\"NONE\",\"body\":\"hello world\"}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Mon, 24 Dec 2018 04:44:36 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1445",
+        "Status": "201 Created",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4997",
+        "X-RateLimit-Reset": "1545628130",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"1c18e0dfd9b7e167a8409af5e62fded2\"",
+        "Location": "https://api.github.com/repos/WorkflowCI/github/issues/comments/449685608",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "X-GitHub-Request-Id": "D351:46D0:12F8D39:34E4932:5C206433"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
