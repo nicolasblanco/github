@@ -49,6 +49,18 @@ defmodule Github.Client do
     }
   end
 
+  def delete!(url, headers) do
+    request = %{url: url, headers: headers}
+    response = HTTPoison.delete!(url, headers)
+
+    %Github.Client.Response{
+      request: request,
+      body: from_json!(response.body),
+      headers: response.headers,
+      status: response.status_code
+    }
+  end
+
   @doc """
   The next paginated page
 

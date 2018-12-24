@@ -41,4 +41,21 @@ defmodule Github.Issues.LabelsTest do
       end
     end
   end
+
+  describe "remove_from_issue!/2" do
+    test "removes a label from an issue" do
+      use_cassette "issues/labels.remove_from_issue!" do
+        response =
+          %Github.Client{access_token: "access_token"}
+          |> Github.Issues.Labels.remove_from_issue!(
+            repo_path: "WorkflowCI/github",
+            issue_number: 1,
+            name: "stale"
+          )
+
+        assert response.status == 200
+        assert response.body == []
+      end
+    end
+  end
 end
